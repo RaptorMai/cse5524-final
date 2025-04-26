@@ -1,0 +1,16 @@
+model_cfg:
+  model_version: 'ViT-B-16'
+  pretrain_dataset: 'openai'
+  fine_tune: 'LoRA'
+  LoRA_dim: 16
+  bioclip_ckpt: '/research/nfs_chao_209/bioclip_ckpoint/model_state_dict.pt'
+  bioclip_tokenizer: 'hf-hub:imageomics/bioclip'
+train_cfg:
+  batch_size: 64
+  epochs: 50
+  optimizer_cfg:
+    optimizer_name: 'Adam'
+    clip_lr: 0.0001
+    wd: 0.001
+    clip_beta1: 0.9
+    clip_beta2: 0.999
